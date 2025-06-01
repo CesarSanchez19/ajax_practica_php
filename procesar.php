@@ -17,11 +17,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         exit;
     }
 
-    // Para este ejemplo simple, definimos un usuario y contraseña "fijos"
-    $usuarioValido = 'cesar';
-    $passwordValida = '123456';
+    // Para este ejemplo simple, definimos dos usuarios y contraseñas "fijas"
+    $usuarioEsValido = ($usuario === 'cesar' || $usuario === 'admin');
+    $passwordEsValida = ($password === '123456' || $password === '1234');
 
-    if ($usuario === $usuarioValido && $password === $passwordValida) {
+    if ($usuarioEsValido && $passwordEsValida) {
         // Credenciales correctas
         $response = [
             'success' => true,
