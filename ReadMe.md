@@ -53,7 +53,7 @@ ajax_login/
   Maneja el evento de envío del formulario (`submit`), captura los valores ingresados, envía la petición AJAX con Fetch API (método POST) a `procesar.php`, procesa la respuesta en JSON y redirige al usuario a `welcome.php` si las credenciales son correctas, o muestra un mensaje de error en pantalla si no lo son.
 
 * **procesar.php**
-  Recibe los valores `usuario` y `password` a través de `$_POST`, realiza una validación (en este ejemplo, se comprueba contra credenciales fijas: “cesar”/“123456”) y devuelve un objeto JSON con la clave `success` (booleano) y, en caso exitoso, `usuario` (para pasarlo a la página de bienvenida), o en caso de error, `message` (texto explicativo).
+  Recibe los valores `usuario` y `password` a través de `$_POST`, realiza una validación (en este ejemplo, se comprueba contra credenciales fijas: “cesar”/“123456” o “admin”/“1234”)   y devuelve un objeto JSON con la clave `success` (booleano) y, en caso exitoso, `usuario` (para pasarlo a la página de bienvenida), o en caso de error, `message` (texto explicativo).
 
 * **welcome.php**
   Lee el parámetro `usuario` que llega por GET (por ejemplo, `welcome.php?usuario=admin`), lo sanitiza con `htmlspecialchars` y muestra un mensaje de bienvenida personalizado. Incluye estilos CSS inline similares a los de `index.html` para mantener la coherencia visual.
